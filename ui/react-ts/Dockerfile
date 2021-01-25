@@ -20,5 +20,9 @@ RUN chown -R phantom:phantom ${HOME}
 RUN apt-get update && apt-get upgrade -y
 
 USER phantom
+
+### Acess peoject binaries
+ENV PATH="${PATH}:${HOME}/node_modules/.bin"
+
 WORKDIR ${HOME}/app
 
