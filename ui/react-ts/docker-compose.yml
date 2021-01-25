@@ -1,0 +1,13 @@
+version: '3'
+
+volumes:
+  bash-history:
+
+services:
+  dev:
+    build:
+      context: ./
+    user: phantom
+    volumes:
+      - .:/home/phantom/app
+      - bash-history:/home/phantom/bash-history
