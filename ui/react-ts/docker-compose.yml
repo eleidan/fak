@@ -4,10 +4,13 @@ volumes:
   bash-history:
 
 services:
-  dev:
+  dev: &app
     build:
       context: ./
     user: phantom
     volumes:
       - .:/home/phantom/app
       - bash-history:/home/phantom/bash-history
+  storybook:
+    <<: *app
+    command: "yarn storybook"
